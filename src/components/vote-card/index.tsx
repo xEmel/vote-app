@@ -6,7 +6,7 @@ import * as S from './styles';
 type VoteCardProps = {
     title: string;
     onAddClick: () => void;
-    children?: ReactElement;
+    children?: ReactElement | ReactElement[];
 }
 
 export const VoteCard = ({ onAddClick, title, children }: VoteCardProps): ReactElement => {

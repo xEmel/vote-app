@@ -1,15 +1,16 @@
 import { Grid } from "@mui/material"
 import { ReactElement } from "react"
-import { Candidates } from "./components/candidates"
-import { Voters } from "./components/voters"
-import { useVotePage } from "./service"
+import { VoteForm } from "../../components/vote-form"
+import { VoteModal } from "../../components/vote-modal"
+import { VoteTable } from "../../components/vote-table"
 
 export const VotePage = (): ReactElement => {
-    const { voters, candidates } = useVotePage();
     return (
         <Grid container spacing={5}>
-            <Voters data={voters} />
-            <Candidates data={candidates} />
+            <VoteTable type={'voters'} />
+            <VoteTable type={'candidates'} />
+            <VoteModal />
+            <VoteForm />
         </Grid>
     )
 }
