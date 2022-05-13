@@ -5,12 +5,12 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import { ReactElement, useContext } from "react";
+import { ReactElement } from "react";
 import { COLUMN_HEADERS, NO_DATA_FOUND, TABLE_NAMES } from "./utils";
 import { VoteCard } from "../vote-card";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
-import { TableTypes, VoteContext, Voter } from "../../context";
+import { TableTypes, useVoteContext, Voter } from "../../context";
 
 type TableProps = {
   type: TableTypes;
@@ -22,7 +22,7 @@ const isVoter = (voter: any): voter is Voter => {
 
 export const VoteTable = ({ type }: TableProps): ReactElement => {
   const { candidates, voters, setIsModalOpen, setType } =
-    useContext(VoteContext);
+    useVoteContext();
 
   const data = type === "candidates" ? candidates : voters;
 

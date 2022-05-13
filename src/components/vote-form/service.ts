@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { VoteContext } from "../../context";
+import React, { useState } from "react";
+import { useVoteContext } from "../../context";
 
 type UseVoteForm = {
   selectedVoter: string | number;
@@ -12,7 +12,7 @@ type UseVoteForm = {
 export const useVoteForm = (): UseVoteForm => {
   const [selectedVoter, setSelectedVoter] = useState<string | number>('');
   const [selectedCandidate, setSelectedCandidate] = useState<string | number>('');
-  const { setCandidates, setVoters } = useContext(VoteContext);
+  const { setCandidates, setVoters } = useVoteContext();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

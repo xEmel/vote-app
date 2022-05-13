@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from "react";
-import { TableTypes, VoteContext } from "../../context";
+import { useEffect, useState } from "react";
+import { TableTypes, useVoteContext } from "../../context";
 
 type UseVoteModal = {
   name: string;
@@ -13,7 +13,7 @@ type UseVoteModal = {
 export const useVoteModal = (): UseVoteModal => {
   const [name, setName] = useState("");
   const { isModalOpen, type, setCandidates, setVoters, setIsModalOpen } =
-    useContext(VoteContext);
+    useVoteContext();
 
   useEffect(() => {
     if (isModalOpen) {

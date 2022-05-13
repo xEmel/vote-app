@@ -1,4 +1,9 @@
-import React, { ReactElement, createContext, useState } from "react";
+import React, {
+  ReactElement,
+  createContext,
+  useState,
+  useContext,
+} from "react";
 
 export type Candidate = {
   id: number;
@@ -65,4 +70,10 @@ export const ContextProvider = ({
   return (
     <VoteContext.Provider value={initialValue}>{children}</VoteContext.Provider>
   );
+};
+
+export const useVoteContext = (): VoteContextType => {
+  const ctx = useContext(VoteContext);
+  if (!ctx) throw Error("Vote context must be used with provider");
+  return ctx;
 };

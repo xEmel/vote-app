@@ -6,8 +6,8 @@ import {
   MenuItem,
   Select,
 } from "@mui/material";
-import { ReactElement, useContext } from "react";
-import { VoteContext } from "../../context";
+import { ReactElement } from "react";
+import { useVoteContext } from "../../context";
 import { useVoteForm } from "./service";
 
 export const VoteForm = (): ReactElement => {
@@ -18,7 +18,7 @@ export const VoteForm = (): ReactElement => {
     setSelectedVoter,
     handleSubmit,
   } = useVoteForm()
-  const { candidates, voters } = useContext(VoteContext);
+  const { candidates, voters } = useVoteContext();
 
   return (
     <Grid item xs={12}>
