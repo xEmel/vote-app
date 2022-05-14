@@ -1,6 +1,6 @@
 import { Grid, styled, Typography } from "@mui/material";
 
-export const Card = styled(Grid)(({ theme }) => ({
+export const CardContent = styled('div')(({ theme }) => ({
     background: theme.palette.grey[800],
 }))
 

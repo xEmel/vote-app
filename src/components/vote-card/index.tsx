@@ -1,5 +1,5 @@
 import AddCircleIcon from '@mui/icons-material/AddCircle';
-import { IconButton } from '@mui/material';
+import { Grid, IconButton } from '@mui/material';
 import { ReactElement } from "react"
 import * as S from './styles';
 
@@ -11,7 +11,8 @@ type VoteCardProps = {
 
 export const VoteCard = ({ onAddClick, title, children }: VoteCardProps): ReactElement => {
     return (
-        <S.Card item xs={12} md={6}>
+        <Grid item xs={12} md={6}>
+            <S.CardContent>
             <S.CardHeader>
                 <S.Title variant="h5">{ title }</S.Title>
                 <IconButton color="primary" onClick={() => onAddClick()}>
@@ -19,6 +20,7 @@ export const VoteCard = ({ onAddClick, title, children }: VoteCardProps): ReactE
                 </IconButton>
             </S.CardHeader>
                 { children }
-        </S.Card>
+                </S.CardContent>
+        </Grid>
     )
 }

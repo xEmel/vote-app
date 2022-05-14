@@ -9,9 +9,9 @@ import {
 import { useVoteModal } from "./service";
 import { MODAL_TITLES } from "./utils";
 
-
 export const VoteModal = () => {
-  const { isModalOpen, name, setName, type, handleClose, handleSubmit } = useVoteModal();
+  const { isModalOpen, name, setName, type, handleClose, handleSubmit } =
+    useVoteModal();
 
   return (
     <Dialog

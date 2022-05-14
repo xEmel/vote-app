@@ -21,8 +21,7 @@ const isVoter = (voter: any): voter is Voter => {
 };
 
 export const VoteTable = ({ type }: TableProps): ReactElement => {
-  const { candidates, voters, setIsModalOpen, setType } =
-    useVoteContext();
+  const { candidates, voters, setIsModalOpen, setType } = useVoteContext();
 
   const data = type === "candidates" ? candidates : voters;
 
@@ -50,7 +49,7 @@ export const VoteTable = ({ type }: TableProps): ReactElement => {
               <TableRow key={`${type}-${element.id}`}>
                 <TableCell>{element.name}</TableCell>
                 {isVoter(element) ? (
-                  <TableCell>
+                  <TableCell sx={{ paddingY: 0 }}>
                     {element.votedFor || element.votedFor === 0 ? (
                       <CheckIcon />
                     ) : (
